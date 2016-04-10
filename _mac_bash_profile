@@ -1,0 +1,9 @@
+alias vi=vim
+export PIP_REQUIRE_VIRTUALENV=true
+HISTCONTROL=erasedups
+HISTIGNORE=”ls:cd:exit:clear”
+
+if [ -f ~/dotfiles/git-completion.bash ]; then
+    source ~/dotfiles/git-completion.bash
+fi
+
