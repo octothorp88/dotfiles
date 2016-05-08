@@ -30,6 +30,7 @@ Bundle 'Shougo/neocomplete.vim'
 " Bundle 'joonty/vdebug.git'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
+Bundle 'rizzatti/dash.vim'
 
 " Bundle 'davidhalter/jedi-vim'
 " Bundle 'Valloric/YouCompleteMe'
@@ -178,7 +179,7 @@ augroup vimrc_autocmds
 set laststatus=2
 set encoding=utf-8
 set t_Co=256
-let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'unicode'
 
 " Python-mode
 " Activate rope
@@ -221,7 +222,7 @@ let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " Don't autofold code
-let g:pymode_folding = 0
+let g:pymode_folding = 1
 
 "=== Key mappings
 let mapleader=","
