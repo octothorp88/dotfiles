@@ -37,7 +37,7 @@ Bundle 'rizzatti/dash.vim'
 " Bundle 'ervandew/supertab'
 " Bundle 'Townk/vim-autoclose' <--Slows down <esc>
 
-let g:AutoPairsFlyMode = 1 
+let g:AutoPairsFlyMode = 1
 
 " IGNORE MAPPINGS FOR CTRLP
 set wildignore+=*/venv/*,*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
