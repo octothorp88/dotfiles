@@ -42,6 +42,7 @@ let g:AutoPairsFlyMode = 1
 " IGNORE MAPPINGS FOR CTRLP
 set wildignore+=*/venv/*,*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 " unlet g:ctrlp_custom_ignore
+nmap ; :CtrlPBuffer<CR>
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(venv|git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
