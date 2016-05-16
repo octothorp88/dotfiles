@@ -1,4 +1,5 @@
 alias vi=vim
+alias tmux='tmux attach || tmux new'
 export PIP_REQUIRE_VIRTUALENV=true
 HISTCONTROL=erasedups
 HISTIGNORE=”ls:cd:exit:clear”
