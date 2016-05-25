@@ -1,5 +1,10 @@
 alias vi=vim
 alias tmux='tmux attach || tmux new'
+
+function journal () { 
+    vim -x ~/Library/Mobile\ Documents/com~apple~CloudDocs/Journal/`date '+%Y-%m-%d-%H:%M:%S.txt'`
+}
+
 export PIP_REQUIRE_VIRTUALENV=true
 HISTCONTROL=erasedups
 HISTIGNORE=”ls:cd:exit:clear”
@@ -7,4 +12,3 @@ HISTIGNORE=”ls:cd:exit:clear”
 if [ -f ~/dotfiles/git-completion.bash ]; then
     source ~/dotfiles/git-completion.bash
 fi
-
