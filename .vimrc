@@ -4,6 +4,7 @@ filetype off
 set backspace=indent,eol,start
 
 set rtp+=~/.vim/bundle/vundle/
+set cm=blowfish2
 call vundle#rc()
 " git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 ":BundleList        <- to list your bundles
