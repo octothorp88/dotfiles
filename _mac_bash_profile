@@ -2,7 +2,7 @@ alias vi=vim
 alias tmux='tmux attach || tmux new'
 
 function journal () { 
-    vim -x ~/Library/Mobile\ Documents/com~apple~CloudDocs/Journal/`date '+%Y-%m-%d-%H:%M:%S.txt'`
+    vim -x ~/Library/Mobile\ Documents/com~apple~CloudDocs/Journal/Journal-`date '+%Y-%m-%d.txt'`
 }
 
 export PIP_REQUIRE_VIRTUALENV=true
