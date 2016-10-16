@@ -3,6 +3,18 @@ filetype off
 
 set backspace=indent,eol,start
 
+" https://github.com/mcantor/no_plugins ** cool video 
+set path+=**
+" Display all matching files when we tab complete
+"
+set wildmenu
+" This will allow fuzzy find my mcantor
+" - hit tab to find partial match
+"   Use * to make it fuzzy
+
+" Create the `tags` file (may need to install ctags first)
+command! MakeTags !ctags -R .
+
 set rtp+=~/.vim/bundle/vundle/
 set cm=blowfish2
 call vundle#rc()
