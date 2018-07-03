@@ -38,6 +38,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-ragtag'
 Bundle 'scrooloose/nerdtree'
+" Bundle 'python-mode/python-mode'
 Bundle 'klen/python-mode'
 Bundle 'Shougo/neocomplete.vim'
 " Bundle 'joonty/vdebug.git'
@@ -210,6 +211,8 @@ let g:Powerline_symbols = 'unicode'
 " ]M            Jump on next class or method (normal, visual, operator modes)
 let g:pymode_rope = 0 
 
+" let g:pymode_python = 'python3'
+
 " Documentation
 let g:pymode_doc = 0
 " set completeop=menu is hack to stop doc from poppingup 
@@ -358,5 +361,4 @@ function! s:check_back_space() "{{{
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
 endfunction"}}}
-
 
