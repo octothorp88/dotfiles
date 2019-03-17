@@ -16,10 +16,10 @@ HISTFILESIZE=2000
 
 #-progs mod--
 alias tmux='tmux attach || tmux new'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias ls='ls --color=auto'
+#alias grep='grep --color=auto'
+#alias fgrep='fgrep --color=auto'
+#alias egrep='egrep --color=auto'
+#alias ls='ls --color=auto'
 alias vi=vim
 alias tmux='tmux attach || tmux new'
 #------------
