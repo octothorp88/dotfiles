@@ -125,13 +125,13 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 #-progs mod--
-alias tmux='tmux attach || tmux new'
+alias tmux='tmux attach || tmux new-session \; split-window -v \; split-window -h \; select-pane -t 0'
 #alias grep='grep --color=auto'
 #alias fgrep='fgrep --color=auto'
 #alias egrep='egrep --color=auto'
 #alias ls='ls --color=auto'
 alias vi=vim
-alias tmux='tmux attach || tmux new'
+#alias tmux='tmux attach || tmux new'
 #------------
 
 export PIP_REQUIRE_VIRTUALENV=true
@@ -141,7 +141,6 @@ HISTIGNORE=”ls:cd:exit:clear”
 if [ -f ~/dotfiles/git-completion.bash ]; then
     source ~/dotfiles/git-completion.bash
 fi
-
 
 if [ $(id -u) -eq 0 ];
 then
