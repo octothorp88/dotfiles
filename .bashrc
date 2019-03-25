@@ -67,8 +67,10 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  PS1="${RED}┌[\u]${NC} [\h]$ps1_informer:\[\e[0;32;49m\]\w\[\e[0m \n${RED}└>${NC}"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1="┌[\u] [\h]$ps1_informer:\[\e[0;32;49m\]\w\[\e[0m \n└>"
 fi
 unset color_prompt force_color_prompt
 
@@ -76,6 +78,7 @@ unset color_prompt force_color_prompt
 case "$TERM" in
 xterm*|rxvt*)
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="┌[\u] [\h]$ps1_informer:\[\e[0;32;49m\]\w\[\e[0m \n└>"
     ;;
 *)
     ;;
@@ -142,9 +145,9 @@ if [ -f ~/dotfiles/git-completion.bash ]; then
     source ~/dotfiles/git-completion.bash
 fi
 
-if [ $(id -u) -eq 0 ];
-then
-  PS1="${RED}┌[\u]${NC} [\h]$ps1_informer:\[\e[0;32;49m\]\w\[\e[0m \n${RED}└>${NC}"
-else
-  PS1="${GREEN}┌[\u]${NC} [\h]$ps1_informer:\[\e[0;32;49m\]\w\[\e[0m \n${GREEN}└>${NC}"
-fi
+#if [ $(id -u) -eq 0 ];
+#then
+#  PS1="${RED}┌[\u]${NC} [\h]$ps1_informer:\[\e[0;32;49m\]\w\[\e[0m \n${RED}└>${NC}"
+#else
+#  PS1="${GREEN}┌[\u]${NC} [\h]$ps1_informer:\[\e[0;32;49m\]\w\[\e[0m \n${GREEN}└>${NC}"
+#fi
