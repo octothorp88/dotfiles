@@ -10,6 +10,7 @@ BLUE='\e[1;34m'
 cyan='\e[0;36m'
 CYAN='\e[1;36m'
 NC='\e[0m'
+nc='\e[0m'
 
 # If not running interactively, don't do anything
 case $- in
@@ -70,7 +71,7 @@ if [ "$color_prompt" = yes ]; then
     PS1="${RED}┌[\u]${NC} [\h]$ps1_informer:\[\e[0;32;49m\]\w\[\e[0m \n${RED}└>${NC}"
 else
     # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    PS1="┌[\u] [\h]$ps1_informer:\[\e[0;32;49m\]\w\[\e[0m \n└>"
+    PS1="┌[${red}\u${nc}] [\h]$ps1_informer:\[\e[0;32;49m\]\w\[\e[0m \n└>"
 fi
 unset color_prompt force_color_prompt
 
@@ -78,7 +79,7 @@ unset color_prompt force_color_prompt
 case "$TERM" in
 xterm*|rxvt*)
     # PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    PS1="┌[\u] [\h]$ps1_informer:\[\e[0;32;49m\]\w\[\e[0m \n└>"
+    PS1="${red}┌[\u@\h]${nc}$ps1_informer:\[\e[0;32;49m\]\w\[\e[0m \n${red}└>${nc}"
     ;;
 *)
     ;;
