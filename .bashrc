@@ -1,16 +1,16 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-green='\e[0;32m'
-GREEN='\e[0;32m'
-red='\e[0;31m'
-RED='\e[1;31m'
-blue='\e[0;34m'
-BLUE='\e[1;34m'
-cyan='\e[0;36m'
-CYAN='\e[1;36m'
-NC='\e[0m'
-nc='\e[0m'
+green='\[\e[0;32m\]'
+GREEN='\[\e[0;32m\]'
+red='\[\e[0;31m\]'
+RED='\[\e[1;31m\]'
+blue='\[\e[0;34m\]'
+BLUE='\[\e[1;34m\]'
+cyan='\[\e[0;36m\]'
+CYAN='\[\e[1;36m\]'
+NC='\[\e[0m\]'
+nc='\[\e[0m\]'
 
 # If not running interactively, don't do anything
 case $- in
@@ -82,6 +82,7 @@ xterm*|rxvt*)
     PS1="${red}┌[\u@\h]${nc}$ps1_informer:\[\e[0;32;49m\]\w\[\e[0m \n${red}└>${nc}"
     ;;
 *)
+    PS1="${red}┌[\u@\h]${nc}$ps1_informer:\[\e[0;32;49m\]\w\[\e[0m \n${red}└>${nc}"
     ;;
 esac
 
