@@ -18,6 +18,17 @@ case $- in
       *) return;;
 esac
 
+if [ $HOSTNAME = "kali" ]; then
+    alias vpn='openvpn /mnt/hgfs/OSCP-SHARE/VPN/OS-47828-PWK.ovpn'
+    alias rdp='rdesktop -g 85% -u offsec -p XXXXXXX 10.11.11.X &'
+    alias ll='ls -la'
+    alias mapshare='ln -s /mnt/hgfs/OSCP-SHARE /root/SHARE'
+    alias webup='python -m SimpleHTTPServer 80'
+    alias ss='searchsploit $1'
+    alias ssx='searchsploit -x $1'
+    alias shieldsup='tcpdump -i tap0 -nnvv src net 10.11.0.0/24 and dst 10.11.0.54 -w - | tee capture.pcap | tcpdump -n -r -'
+fi
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
