@@ -20,6 +20,14 @@ case $- in
 esac
 
 if [ $HOSTNAME = "kali" ]; then
+cat << "EOF"
+  ____  __.      .__  .__
+ |    |/ _|____  |  | |__|
+ |      < \__  \ |  | |  |
+ |    |  \ / __ \|  |_|  |
+ |____|__ (____  /____/__|
+         \/    \/
+EOF
 
     windowsip=`cat ~/controlpanel.txt | grep windowsip | awk '{print $2}' | tr [0123456789] [9876543210]`
     windowspassword=`cat ~/controlpanel.txt | grep windowspassword | awk '{print $2}'| base64 -d`
