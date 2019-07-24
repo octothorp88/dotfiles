@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# for examples # this is a test for git push
 
 green='\[\e[0;32m\]'
 GREEN='\[\e[0;32m\]'
