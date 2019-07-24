@@ -20,6 +20,7 @@ case $- in
 esac
 
 if [ $HOSTNAME = "kali" ]; then
+    if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
 cat << "EOF"
   ____  __.      .__  .__
  |    |/ _|____  |  | |__|
@@ -28,6 +29,7 @@ cat << "EOF"
  |____|__ (____  /____/__|
          \/    \/
 EOF
+    fi
 
     windowsip=`cat ~/controlpanel.txt | grep windowsip | awk '{print $2}' | tr [0123456789] [9876543210]`
     windowspassword=`cat ~/controlpanel.txt | grep windowspassword | awk '{print $2}'| base64 -d`
