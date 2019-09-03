@@ -42,7 +42,7 @@ EOF
     alias ss='searchsploit $1'
     alias ssx='searchsploit -x $1'
     alias shieldsup='tcpdump -i tap0 -nnvv src net 10.11.0.0/24 and dst 10.11.0.54 -w - | tee capture.pcap | tcpdump -n -r -'
-    alias controlpanel="firefox \"`cat ~/controlpanel.txt | grep controlpanel | awk '{print $2}'`\"&"
+    alias controlpanel="firefox \"`cat ~/controlpanel.txt | grep controlpanel | awk '{print $2}'`\" > /dev/null 2>&1 &"
 fi
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -157,7 +157,8 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 #-progs mod--
-alias tmux='tmux attach || tmux new-session \; split-window -v \; split-window -h \; select-pane -t 0'
+# alias tmux='tmux attach || tmux new-session \; split-window -v \; split-window -h \; select-pane -t 0'
+alias tmux='tmux attach || tmux new-session \;'
 #alias grep='grep --color=auto'
 #alias fgrep='fgrep --color=auto'
 #alias egrep='egrep --color=auto'
