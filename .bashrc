@@ -34,7 +34,7 @@ EOF
     windowsip=`cat ~/controlpanel.txt | grep windowsip | awk '{print $2}' | tr [0123456789] [9876543210]`
     windowspassword=`cat ~/controlpanel.txt | grep windowspassword | awk '{print $2}'| base64 -d`
     alias vpn='openvpn /mnt/hgfs/OSCP-SHARE/VPN/vpn.ovpn'
-    alias rdp="rdesktop -g 60% -u offsec -p ${windowspassword} ${windowsip} &"
+    alias rdp="rdesktop -g 70% -u offsec -p ${windowspassword} ${windowsip} &"
     alias ll='ls -la'
     alias mapshare='ln -s /mnt/hgfs/OSCP-SHARE /root/SHARE'
     alias mountshare='~/bin/mount-vmware-shares.sh'
