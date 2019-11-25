@@ -100,12 +100,11 @@ EOF
 
     [8]*)
 cat << "EOF"
-__________
-\______   \ ___________  ______ _______  __ ________________    ____   ____  ____
- |     ___// __ \_  __ \/  ___// __ \  \/ // __ \_  __ \__  \  /    \_/ ___\/ __ \
- |    |   \  ___/|  | \/\___ \\  ___/\   /\  ___/|  | \// __ \|   |  \  \__\  ___/
- |____|    \___  >__|  /____  >\___  >\_/  \___  >__|  (____  /___|  /\___  >___  >
-               \/           \/     \/          \/           \/     \/     \/    \/
+______   ___________  ______ _______  __ ___________   ____
+\____ \_/ __ \_  __ \/  ___// __ \  \/ // __ \_  __ \_/ __ \
+|  |_> >  ___/|  | \/\___ \\  ___/\   /\  ___/|  | \/\  ___/
+|   __/ \___  >__|  /____  >\___  >\_/  \___  >__|    \___  >
+|__|        \/           \/     \/          \/            \/
 EOF
         ;;
     [9]*)
@@ -142,7 +141,7 @@ esac
     alias mapshare='ln -s /mnt/hgfs/OSCP-SHARE /root/SHARE'
     alias mountshare='~/bin/mount-vmware-shares.sh'
     alias webup='python -m SimpleHTTPServer 80'
-    alias screenshot='~/bin/screenshot.sh'
+    alias screenshot='scrot -s'
     alias ss='searchsploit $1'
     alias ssx='searchsploit -x $1'
     alias shieldsup='tcpdump -i tap0 -nnvv src net 10.11.0.0/24 and dst 10.11.0.54 -w - | tee capture.pcap | tcpdump -n -r -'
