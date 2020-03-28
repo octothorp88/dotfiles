@@ -139,7 +139,7 @@ esac
     alias rdp="rdesktop -g 70% -u offsec -p ${windowspassword} ${windowsip} &"
     alias ll='ls -la'
     alias mapshare='ln -s /mnt/hgfs/OSCP-SHARE /root/SHARE'
-    alias mountshare='~/bin/mount-vmware-shares.sh'
+    alias mountshare='sudo ~/bin/mount-vmware-shares.sh'
     alias webup='python -m SimpleHTTPServer 80'
     alias screenshot='scrot -s'
     alias ss='searchsploit $1'
