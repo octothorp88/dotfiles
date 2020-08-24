@@ -1,7 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples # this is a test for git push
-
 green='\[\e[0;32m\]'
 GREEN='\[\e[0;32m\]'
 red='\[\e[0;31m\]'
@@ -133,8 +132,16 @@ EOF
 esac
     fi
 
-    windowsip=`cat ~/controlpanel.txt | grep windowsip | awk '{print $2}' | tr [0123456789] [9876543210]`
-    windowspassword=`cat ~/controlpanel.txt | grep windowspassword | awk '{print $2}'| base64 -d`
+    if [ -f ~/controlpanel.txt ] ; then
+        windowsip=`cat ~/controlpanel.txt | grep windowsip | awk '{print $2}' | tr [0123456789] [9876543210]`
+        windowspassword=`cat ~/controlpanel.txt | grep windowspassword | awk '{print $2}'| base64 -d`
+        alias controlpanel="firefox \"`cat ~/controlpanel.txt | grep controlpanel | awk '{print $2}'`\" > /dev/null 2>&1 &"
+    else
+        echo "Host share not mounted"
+        echo
+        echo "Please run mountshare"
+    fi
+
     alias vpn='openvpn /mnt/hgfs/OSCP-SHARE/VPN/vpn.ovpn'
     alias rdp="rdesktop -g 70% -u offsec -p ${windowspassword} ${windowsip} &"
     alias ll='ls -la'
@@ -146,12 +153,11 @@ esac
     alias code="code --user-data-dir ~/.code"
     alias ssx='searchsploit -x $1'
     alias shieldsup='tcpdump -i tap0 -nnvv src net 10.11.0.0/24 and dst 10.11.0.54 -w - | tee capture.pcap | tcpdump -n -r -'
-    alias controlpanel="firefox \"`cat ~/controlpanel.txt | grep controlpanel | awk '{print $2}'`\" > /dev/null 2>&1 &"
 fi
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+# HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -255,10 +261,11 @@ if ! shopt -oq posix; then
 fi
 
 [ -z "$PS1" ] && return
-HISTCONTROL=ignoredups:ignorespace
+HISTCONTROL=ignoredups:ignorespace:erasedups
 shopt -s histappend
-HISTSIZE=10000
-HISTFILESIZE=20000
+# HISTSIZE=10000
+# HISTFILESIZE=20000
+HISTIGNORE=”ls:cd:exit:clear:bg:fg:history”
 
 #-progs mod--
 # alias tmux='tmux attach || tmux new-session \; split-window -v \; split-window -h \; select-pane -t 0'
@@ -272,11 +279,14 @@ alias vi=vim
 #------------
 
 export PIP_REQUIRE_VIRTUALENV=true
-HISTCONTROL=erasedups
-HISTIGNORE=”ls:cd:exit:clear”
+# HISTCONTROL=erasedups
 
 if [ -f ~/dotfiles/git-completion.bash ]; then
     source ~/dotfiles/git-completion.bash
+fi
+
+if [ -f ~/netinvm/help_scripts.sh ]; then
+    source ~/netinvm/help_scripts.sh
 fi
 
 #if [ $(id -u) -eq 0 ];
