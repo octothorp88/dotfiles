@@ -137,9 +137,10 @@ esac
         windowspassword=`cat ~/controlpanel.txt | grep windowspassword | awk '{print $2}'| base64 -d`
         alias controlpanel="firefox \"`cat ~/controlpanel.txt | grep controlpanel | awk '{print $2}'`\" > /dev/null 2>&1 &"
     else
-        echo "Host share not mounted"
-        echo
-        echo "Please run mountshare"
+        tput setaf 1
+        tput setab 7
+        echo "Host share not mounted, please run mountshare."
+        tput sgr0
     fi
 
     alias vpn='openvpn /mnt/hgfs/OSCP-SHARE/VPN/vpn.ovpn'
