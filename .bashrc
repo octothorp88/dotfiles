@@ -139,7 +139,7 @@ esac
     else
         tput setaf 1
         tput setab 7
-        echo "Host share not mounted, please run mountshare."
+        echo "Host share not mounted, please run mountshare or mountvshare."
         tput sgr0
     fi
 
@@ -148,6 +148,7 @@ esac
     alias ll='ls -la'
     alias mapshare='ln -s /mnt/hgfs/OSCP-SHARE /root/SHARE'
     alias mountshare='sudo ~/bin/mount-vmware-shares.sh'
+    alias mountvshare='sudo mount -t vboxsf OSCP-SHARE /mnt/hgfs/OSCP-SHARE'
     alias webup='python -m SimpleHTTPServer 80'
     alias screenshot='scrot -s'
     alias ss='searchsploit $1'
