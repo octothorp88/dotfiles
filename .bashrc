@@ -155,6 +155,8 @@ esac
     alias code="code --user-data-dir ~/.code"
     alias ssx='searchsploit -x $1'
     alias shieldsup='tcpdump -i tap0 -nnvv src net 10.11.0.0/24 and dst 10.11.0.54 -w - | tee capture.pcap | tcpdump -n -r -'
+    alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+
 fi
 
 # don't put duplicate lines or lines starting with space in the history.
